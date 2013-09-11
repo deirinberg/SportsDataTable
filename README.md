@@ -26,10 +26,10 @@ In this project there are 36 groups and 122 teams. Once I built the initial sort
 ##What other uses does this have?
 There are many different data structures that utilize similar hierarchies. Most music apps first display artists and then sort by albums then songs, always giving the user the option of seeing all songs at any point. Many custom data structures need to use a similar type of tree.
 
-##Updated
-JSON- The project now responds to JSON data. The teams and leagues are stored and converted from local JSON files. 
+##Update
+The project now responds to JSON data. The teams and leagues are stored and converted from local JSON files. 
 
-Standings- The project pulls the HTML pages of each league's standings from ESPN, sorts through them and finds their records (surprisingly quick).
+Standings: The app pulls the HTML pages of each league's standings from ESPN, sorts through them and finds their records. Team records are displayed in order of percentage and can be sorted in the league, conference or division.
 
 <br></br>
 

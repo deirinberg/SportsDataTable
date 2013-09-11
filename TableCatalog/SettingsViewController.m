@@ -34,9 +34,12 @@
     [self.tableView setEditing:YES animated:YES];
     self.tableView.scrollEnabled = NO;
     
-    //If cells are already sorted by champion the segmented control should be set to the appropriate index
-    if([self.sortBy isEqualToString:@"Champion"]){
+    //If cells are already sorted by standings the segmented control should be set to the appropriate index
+    if([self.sortBy isEqualToString:@"Name"]){
         self.segmentedControl.selectedSegmentIndex = 1;
+    }
+    else if([self.sortBy isEqualToString:@"Champion"]){
+        self.segmentedControl.selectedSegmentIndex = 2;
     }
     
     /* A back button is set to the left bar button item (not the back button item) because they are different navigation

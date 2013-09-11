@@ -99,7 +99,11 @@
     }
     [self.champ sizeToFit];
     self.champ.frame = CGRectMake((self.view.frame.size.width/2)-(self.champ.frame.size.width/2), 270, self.champ.frame.size.width, self.champ.frame.size.height);
-    
+    self.record.contentMode = UIViewContentModeScaleAspectFit;
+    self.record.textColor = self.textColor;
+    self.record.text = [NSString stringWithFormat:@"Record: %@", self.team.record];
+    [self.record sizeToFit];
+    self.record.frame = CGRectMake((self.view.frame.size.width/2)-(self.record.frame.size.width/2), 340, self.record.frame.size.width, self.record.frame.size.height);
 }
 
 -(void)viewWillAppear:(BOOL)animated{

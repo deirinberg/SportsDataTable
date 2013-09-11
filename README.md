@@ -5,7 +5,7 @@ Created by Dylan Eirinberg
 
 ##What is SportsDataTable?
 
-One of my tasks at my internship this summer was to create and display a catalog of YouTube videos. I realized there weren’t many open source projects devoted to explaining how to present dynamic data in a UITableView. I decided to create a project that demonstrates many of the UITableView features in a drill-down navigation system. The app is designed to be very scalable and responsive to changing information.
+One of my tasks at my internship this summer was to create and display a catalog of YouTube videos. I realized there weren’t many open source projects devoted to explaining how to present dynamic data in a UITableView. I decided to create a project that demonstrates many of the UITableView features in a drill-down navigation system. The app is designed to be very scalable and responsive to changing JSON data.
 
 ###Data: 
 One of the main things this project shows is how to respond to dynamic and scalable data. When a developer wants to add or update information to their app, it should be quick and easy. I decided to present sports information. Sports have a long drill-down list starting with leagues such as the NBA or MLB, then conferences, then divisions and finally teams.
@@ -25,6 +25,11 @@ In this project there are 36 groups and 122 teams. Once I built the initial sort
 
 ##What other uses does this have?
 There are many different data structures that utilize similar hierarchies. Most music apps first display artists and then sort by albums then songs, always giving the user the option of seeing all songs at any point. Many custom data structures need to use a similar type of tree.
+
+##Updated
+JSON- The project now responds to JSON data. The teams and leagues are stored and converted from local JSON files. 
+
+Standings- The project pulls the HTML pages of each league's standings from ESPN, sorts through them and finds their records (surprisingly quick).
 
 <br></br>
 
@@ -59,8 +64,9 @@ There are many different data structures that utilize similar hierarchies. Most 
 <br></br>
 
 ##What’s next for this project?
-<p>*Instead of setting the data in the view controllers (can be slow loading times for large databases) the program should be updated to read in and convert JSON files to Team/Group instancetypes.</p>
-<p>*The app supports dynamic data but currently the data never changes. Ideally this information (most likely JSON files detailed above) can be downloaded from a server. That way the app can display current standings and schedules for each team.</p>
+<p>*Support for team and/or current scores to make this more useful for users </p>
+<p>*Although the app is designed for dynamic data currently no information other than the standings can be changed outside of the app. Ideally this information (most likely JSON files detailed above) can be hosted and downloaded from a server </p>
+<p>*Pull to refresh for standings and possibly other data </p>
 
 
 

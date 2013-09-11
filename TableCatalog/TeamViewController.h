@@ -17,6 +17,7 @@
 @property (nonatomic, retain) UIColor *textColor; //the color (black or white) for all text
 @property (nonatomic, retain) IBOutlet UILabel *coach; //coach of the team
 @property (nonatomic, retain) IBOutlet UILabel *champ; //year of the last championship the team won
+@property (nonatomic, retain) IBOutlet UILabel *record; //year of the last championship the team won
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activity; //activity animates when logo is loading
 @property (nonatomic) BOOL alertShown; //if alert for no Internet has been shown or not
 

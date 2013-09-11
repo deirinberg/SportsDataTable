@@ -15,6 +15,8 @@
 		CC4114F117B6B92B0039BEAC /* NoLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CC4114EF17B6B92B0039BEAC /* NoLogo@2x.png */; };
 		CC4114F817B6BA660039BEAC /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4114F717B6BA660039BEAC /* SettingsViewController.m */; };
 		CCB32EC617B6F702008CD91A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCB32EC517B6F702008CD91A /* QuartzCore.framework */; };
+		CCCB436217BF0AD000308DBF /* Teams.JSON in Resources */ = {isa = PBXBuildFile; fileRef = CCCB436117BF0AD000308DBF /* Teams.JSON */; };
+		CCCB436417BF128400308DBF /* Groups.JSON in Resources */ = {isa = PBXBuildFile; fileRef = CCCB436317BF128400308DBF /* Groups.JSON */; };
 		CCEEBD6517B1B957009FC648 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCEEBD6417B1B957009FC648 /* Foundation.framework */; };
 		CCEEBD6717B1B957009FC648 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCEEBD6617B1B957009FC648 /* CoreGraphics.framework */; };
 		CCEEBD6917B1B957009FC648 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCEEBD6817B1B957009FC648 /* UIKit.framework */; };
@@ -68,6 +70,8 @@
 		CC4114F617B6BA660039BEAC /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		CC4114F717B6BA660039BEAC /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		CCB32EC517B6F702008CD91A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CCCB436117BF0AD000308DBF /* Teams.JSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Teams.JSON; sourceTree = "<group>"; };
+		CCCB436317BF128400308DBF /* Groups.JSON */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Groups.JSON; sourceTree = "<group>"; };
 		CCEEBD6117B1B957009FC648 /* SportsTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportsTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCEEBD6417B1B957009FC648 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CCEEBD6617B1B957009FC648 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -190,6 +194,8 @@
 		CCEEBD6B17B1B957009FC648 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CCCB436117BF0AD000308DBF /* Teams.JSON */,
+				CCCB436317BF128400308DBF /* Groups.JSON */,
 				CC4114DF17B4B3A40039BEAC /* MLBCell.png */,
 				CC4114E017B4B3A40039BEAC /* MLBCell@2x.png */,
 				CCEEBDB517B1FA75009FC648 /* NFLCell.png */,
@@ -334,6 +340,8 @@
 				CC4114E617B5DDC70039BEAC /* NHLCell.png in Resources */,
 				CCF3CE0217BBE1C700F795E6 /* settings.png in Resources */,
 				CC4114F117B6B92B0039BEAC /* NoLogo@2x.png in Resources */,
+				CCCB436217BF0AD000308DBF /* Teams.JSON in Resources */,
+				CCCB436417BF128400308DBF /* Groups.JSON in Resources */,
 				CCEEBDB817B1FA75009FC648 /* NFLCell@2x.png in Resources */,
 				CCF3CDFD17BBE17800F795E6 /* SportsIcon@2x.png in Resources */,
 				CCEEBD6F17B1B957009FC648 /* InfoPlist.strings in Resources */,

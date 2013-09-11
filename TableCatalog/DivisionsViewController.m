@@ -84,7 +84,7 @@
     if([self.groups count] == 0 && [self.teams count]<10){
         return (screen.size.height-64)/([self.teams count]);
     }
-    else if([self.groups count] == 0 && ([self.sortBy isEqualToString:@"Name"] || self.sortBy == nil)){
+    else if([self.groups count] == 0 && ([self.sortBy isEqualToString:@"Name"])){
      return 44;
     }
     else if([self.groups count] == 0){
@@ -123,7 +123,7 @@
      */
     if([self.groups count] == 0){
         NSArray *descriptors;
-        if(self.sortBy == nil || [self.sortBy isEqualToString:@"Name"]){
+        if([self.sortBy isEqualToString:@"Name"]){
             NSSortDescriptor *valueDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
             descriptors = [NSArray arrayWithObject:valueDescriptor];
             cell.detailTextLabel.text = @"";
@@ -132,11 +132,21 @@
             NSSortDescriptor *valueDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastChamp" ascending:NO];
             descriptors = [NSArray arrayWithObject:valueDescriptor];
         }
+        else if(self.sortBy == nil || [self.sortBy isEqualToString:@"Record"]){
+            NSSortDescriptor *valueDescriptor = [[NSSortDescriptor alloc] initWithKey:@"pct" ascending:NO];
+            descriptors = [NSArray arrayWithObject:valueDescriptor];
+        }
         NSArray *sortedTeams = [self.teams sortedArrayUsingDescriptors:descriptors];
         Team *team = [sortedTeams objectAtIndex:indexPath.row];
+        NSLog(@"Team: %@, Pct: %f", team.name, team.pct);
         cell.textLabel.text = team.name;
         if(![cell.detailTextLabel.text isEqualToString:@""]){
+            if([self.sortBy isEqualToString:@"lastChamp"]){
             cell.detailTextLabel.text = [NSString stringWithFormat:@"Last Championship: %@", team.lastChamp];
+            }
+            else{
+                cell.detailTextLabel.text = [NSString stringWithFormat:@"Record: %@", team.record];
+            }
         }
     }
     

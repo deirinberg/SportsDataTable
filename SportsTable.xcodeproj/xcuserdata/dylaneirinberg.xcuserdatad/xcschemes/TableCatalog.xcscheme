@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CCEEBD6017B1B957009FC648"
-               BuildableName = "TableCatalog.app"
+               BuildableName = "SportsTable.app"
                BlueprintName = "SportsTable"
                ReferencedContainer = "container:SportsTable.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CCEEBD8117B1B957009FC648"
-               BuildableName = "TableCatalogTests.xctest"
+               BuildableName = "SportsTableTests.xctest"
                BlueprintName = "SportsTableTests"
                ReferencedContainer = "container:SportsTable.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CCEEBD6017B1B957009FC648"
-            BuildableName = "TableCatalog.app"
+            BuildableName = "SportsTable.app"
             BlueprintName = "SportsTable"
             ReferencedContainer = "container:SportsTable.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CCEEBD6017B1B957009FC648"
-            BuildableName = "TableCatalog.app"
+            BuildableName = "SportsTable.app"
             BlueprintName = "SportsTable"
             ReferencedContainer = "container:SportsTable.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CCEEBD6017B1B957009FC648"
-            BuildableName = "TableCatalog.app"
+            BuildableName = "SportsTable.app"
             BlueprintName = "SportsTable"
             ReferencedContainer = "container:SportsTable.xcodeproj">
          </BuildableReference>

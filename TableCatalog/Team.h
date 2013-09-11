@@ -16,6 +16,8 @@
 @property (nonatomic, copy) NSString *lastChamp; //last year they won a championship (- for never)
 @property (nonatomic, copy) NSString *division; //division of team (ex: Central)
 @property (nonatomic, copy) NSString *hex; //hex string of main color of logo
+@property (nonatomic, copy) NSString *record;
+@property (nonatomic)       double   pct;      //team winning percentage
 @property (nonatomic, copy) NSString *imgLink; //link to logo of image
 @property (nonatomic, copy) UIImage  *logo; //holds the logo of the image when downloaded
 

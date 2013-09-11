@@ -43,46 +43,22 @@
     self.tableView.scrollEnabled = NO;
     self.alertShown = NO;
     
-    /* The group entries are set here. Each entry of the array returns an instancetype define in the Group class.
+    /* The group entries are set here through a local JSON file. Each entry of the array returns an instancetype 
+     * defined in the Group class. The data is converted to group objects using an NSDictionary
      * This array can also be set/initialized in the AppDelegate.
      */
-
-    self.groups = @[[Group groupWithName:@"All Teams" type:@"All NBA" imgLink:@"nil"],
-                    [Group groupWithName:@"Eastern" type:@"NBA League" imgLink:@"/logos/6/999/full/2995.gif"],
-                    [Group groupWithName:@"Western" type:@"NBA League" imgLink:@"/logos/6/1001/full/2996.gif"],
-                    [Group groupWithName:@"Southeast" type:@"NBA Eastern" imgLink:@"nil"],
-                    [Group groupWithName:@"Atlantic" type:@"NBA Eastern" imgLink:@"nil"],
-                    [Group groupWithName:@"Central" type:@"NBA Eastern" imgLink:@"nil"],
-                    [Group groupWithName:@"Southwest" type:@"NBA Western" imgLink:@"nil"],
-                    [Group groupWithName:@"Northwest" type:@"NBA Western" imgLink:@"nil"],
-                    [Group groupWithName:@"Pacific" type:@"NBA Western" imgLink:@"nil"],
-                    [Group groupWithName:@"All Teams" type:@"All NFL" imgLink:@"nil"],
-                    [Group groupWithName:@"AFC" type:@"NFL League" imgLink:@"/logos/7/1010/full/4cgcwgzbffxlpcbuj94601x5c.gif"],
-                    [Group groupWithName:@"NFC" type:@"NFL League" imgLink:@"/logos/7/1012/full/rkqnfgtgwky3sf8viwrmze8me.gif"],
-                    [Group groupWithName:@"AFC East" type:@"NFL AFC" imgLink:@"nil"],
-                    [Group groupWithName:@"AFC North" type:@"NFL AFC" imgLink:@"nil"],
-                    [Group groupWithName:@"AFC South" type:@"NFL AFC" imgLink:@"nil"],
-                    [Group groupWithName:@"AFC West" type:@"NFL AFC" imgLink:@"nil"],
-                    [Group groupWithName:@"NFC East" type:@"NFL NFC" imgLink:@"nil"],
-                    [Group groupWithName:@"NFC North" type:@"NFL NFC" imgLink:@"nil"],
-                    [Group groupWithName:@"NFC South" type:@"NFL NFC" imgLink:@"nil"],
-                    [Group groupWithName:@"NFC West" type:@"NFL NFC" imgLink:@"nil"],
-                    [Group groupWithName:@"All Teams" type:@"All MLB" imgLink:@"nil"],
-                    [Group groupWithName:@"American League" type:@"MLB League" imgLink:@"/logos/53/488/full/4984__american_league-primary-2013.gif"],
-                    [Group groupWithName:@"National League" type:@"MLB League" imgLink:@"/logos/54/489/full/1984.gif"],
-                    [Group groupWithName:@"AL East" type:@"MLB American" imgLink:@"nil"],
-                    [Group groupWithName:@"AL Central" type:@"MLB American" imgLink:@"nil"],
-                    [Group groupWithName:@"AL West" type:@"MLB American" imgLink:@"nil"],
-                    [Group groupWithName:@"NL East" type:@"MLB National" imgLink:@"nil"],
-                    [Group groupWithName:@"NL Central" type:@"MLB National" imgLink:@"nil"],
-                    [Group groupWithName:@"NL West" type:@"MLB National" imgLink:@"nil"],
-                    [Group groupWithName:@"All Teams" type:@"All NHL" imgLink:@"nil"],
-                    [Group groupWithName:@"Eastern" type:@"NHL League" imgLink:@"/logos/1/985/full/6857.gif"],
-                    [Group groupWithName:@"Western" type:@"NHL League" imgLink:@"/logos/1/984/full/6859.gif"],
-                    [Group groupWithName:@"Atlantic" type:@"NHL Eastern" imgLink:@"nil"],
-                    [Group groupWithName:@"Metropolitan" type:@"NHL Eastern" imgLink:@"nil"],
-                    [Group groupWithName:@"Central" type:@"NHL Western" imgLink:@"nil"],
-                    [Group groupWithName:@"Pacific" type:@"NHL Western" imgLink:@"nil"]];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Groups" ofType:@"JSON"];
+    NSError *error = nil;
+    NSData *data = [NSData dataWithContentsOfFile:filePath options:NSDataReadingMappedIfSafe error:&error];
+    NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+    NSArray *groupsArray = [dataDictionary objectForKey:@"groups"];
+    
+    NSMutableArray *mutableGroups = [NSMutableArray array];
+    for(NSDictionary *dictionary in groupsArray){
+        Group *group = [Group groupWithName:[dictionary objectForKey:@"name"] type:[dictionary objectForKey:@"type"] imgLink:[dictionary objectForKey:@"imgLink"]];
+            [mutableGroups addObject:group];
+    }
+    self.groups = [mutableGroups copy];
     
     /* A settings button (custom type) is set with an image and to the right bar button item of the navigation bar. It is
      * linked up to a method "settingsPressed" to call a segue.
